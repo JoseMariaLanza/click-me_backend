@@ -9,7 +9,7 @@ services:
     volumes:
       - ./app:/app
     command: >
-      sh -c "cd click-me && php artisan serve --host 0.0.0.0"
+      sh -c "php artisan serve --host 0.0.0.0"
     environment:
       - DB_HOST=db
       - DB_NAME=click-me_backend_db
@@ -27,7 +27,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=supersecretpassword
     volumes:
-      - db:/var/lib/postgresql/data:z
+      - db:/var/lib/postgresql/data
 volumes:
   db:
     driver: local
