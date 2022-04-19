@@ -30,6 +30,16 @@ class HomeTest extends TestCase
 
     public function test_post_click()
     {
-        return $this->assertTrue(true);
+        $click = factory(Click::class)->create();
+        $payload = [
+            'times_clicked' => $click->times_clicked,
+            'updated_at'    => $click->updated_at,
+            'created_at'    => $click->created_at,
+            'id'    => $click->id,
+        ];
+
+        $response = $this->post('/api', $payload);
+
+        $response->assertStatus(200);
     }
 }
