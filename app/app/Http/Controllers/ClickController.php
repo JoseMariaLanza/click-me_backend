@@ -20,7 +20,7 @@ class ClickController extends Controller
      */
     public function index()
     {
-        return $this->repository->all();
+        return response($this->repository->all());
     }
 
     /**
@@ -41,7 +41,7 @@ class ClickController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return response($this->repository->store($request));
     }
 
     /**
