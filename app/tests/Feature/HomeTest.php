@@ -10,7 +10,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 // use Illuminate\Http\Response;
 use Tests\TestCase;
 
-class ClickControllerTest extends TestCase
+class HomeTest extends TestCase
 {
     use DatabaseMigrations;
     use RefreshDatabase;
@@ -23,7 +23,7 @@ class ClickControllerTest extends TestCase
     {
         factory(Click::class)->create();
 
-        $response = $this->get('/api/clicks');
+        $response = $this->get('/api');
 
         $response->assertStatus(200);
     }
