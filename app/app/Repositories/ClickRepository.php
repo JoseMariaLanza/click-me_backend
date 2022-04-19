@@ -17,7 +17,7 @@ class ClickRepository implements IRepository {
     public function all()
     {
         $click_data = $this->model->paginate(5);
-        $initial_value = true ? $click_data->items()[0]->times_clicked : 0;
+        $initial_value = $this->dateValidation() ? $click_data->items()[0]->times_clicked : 0;
         return [
             'page' => $click_data,
             'initial_value' => $initial_value
