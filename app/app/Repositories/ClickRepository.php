@@ -16,7 +16,7 @@ class ClickRepository implements IRepository {
 
     public function all()
     {
-        $click_data = $this->model->paginate(5);
+        $click_data = $this->model->orderBy('id', 'DESC')->paginate(5);
         $initial_value = $this->dateValidation() ? $click_data->items()[0]->times_clicked : 0;
         return [
             'page' => $click_data,
@@ -49,7 +49,7 @@ class ClickRepository implements IRepository {
 
     public function dateValidation()
     {
-        $last_date = Click::max('created_at');
+        $last_date = $this->model->max('created_at');
         $now = Carbon::now();
         // Try comment previous code and uncomment below for test the requirement manually
         // $now = Carbon::create('2022-04-21 00:00:00'); (example)
