@@ -2,7 +2,7 @@
 
 This project was created with [Laravel 6](https://laravel.com/docs/6.x), a [Docker](https://docs.docker.com/get-started/) image
 with `php:7.2-apache` and [PostgreSQL](https://www.postgresql.org/docs/current/index.html) latest image for DataBase.
-Backend is ready for run Github Actions at push changes
+**This project is ready for run Github Actions at push changes**
 
 ### Project Requirements
 
